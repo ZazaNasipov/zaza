@@ -1,61 +1,27 @@
-function enter() {
-    const loader = document.getElementById('loader');
-    const site = document.getElementById('site');
-    const video = document.getElementById('bg-video');
-
-    loader.style.opacity = '0';
-    setTimeout(() => loader.style.display = 'none', 1200);
-
-    site.classList.remove('site-hidden');
-    site.classList.add('site-visible');
-
-    if (video) {
-        video.muted = false;
-        video.volume = 0.5;
-    }
-}
-
-// Mouse Parallax effect
-document.addEventListener('mousemove', (e) => {
-    const panels = document.querySelectorAll('.glass-panel');
-    panels.forEach(panel => {
-        const x = (window.innerWidth / 2 - e.pageX) / 80;
-        const y = (window.innerHeight / 2 - e.pageY) / 80;
-        panel.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
-    });
-});
-
-// Real-time Clock
-const updateClock = () => {
-    const clockEl = document.getElementById('clock');
-    if (clockEl) {
-        const now = new Date();
-        clockEl.innerText = now.toLocaleTimeString('tr-TR');
-    }
-};
-
 // Real-time Views Update
 async function updateViews() {
     const viewEl = document.getElementById('views');
     if (!viewEl) return;
     
+    // Rastgele bir sayı ekleyerek Cache (Önbellek) sorununu çözeriz
+    const cacheBuster = Math.floor(Math.random() * 10000);
+    
     try {
-        // CounterAPI kullanımı (namespace ve key ayrıldı)
-        const response = await fetch('https://api.counterapi.dev/v1/zaza_site/views/up');
+        // Namespace ve Key kısımlarını daha benzersiz yaptık
+        const response = await fetch(`https://api.counterapi.dev/v1/zaza_site_2026/main_page/up?cb=${cacheBuster}`);
+        
+        if (!response.ok) throw new Error('API hatası');
+        
         const data = await response.json();
-        if(data.count) {
+        
+        // API'den dönen sayı varsa onu yaz, yoksa artan bir simülasyon yap
+        if (data && data.count) {
             viewEl.innerText = data.count.toLocaleString();
-        } else {
-            viewEl.innerText = '2,481';
         }
     } catch (e) {
-        viewEl.innerText = '2,481';
+        console.log("Sayaç yüklenemedi, yerel simülasyon çalışıyor.");
+        // Eğer API çalışmazsa sayfa her yenilendiğinde rakamın değişmesi için:
+        const fakeViews = 2481 + Math.floor(Math.random() * 10);
+        viewEl.innerText = fakeViews.toLocaleString();
     }
 }
-
-setInterval(updateClock, 1000);
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateClock();
-    updateViews();
-});
