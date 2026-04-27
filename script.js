@@ -1,37 +1,23 @@
-let video;
-
 function enter() {
     const loader = document.getElementById("loader");
     const site = document.getElementById("site");
-
-    video = document.getElementById("bg-video");
+    const video = document.getElementById("bg-video");
 
     loader.style.display = "none";
     site.classList.add("site-visible");
 
     if (video) {
-        video.muted = false; // SES AÇ
+        video.currentTime = 0;
+        video.muted = false;   // 🔊 SES AÇ
         video.volume = 1;
 
         video.play().catch(err => {
-            console.log("Video hatası:", err);
+            console.log("Video başlatılamadı:", err);
         });
     }
 
     updateViews();
 }
-
-/* SES BUTONU */
-document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("soundToggle");
-
-    btn.addEventListener("click", () => {
-        if (!video) return;
-
-        video.muted = !video.muted;
-        btn.textContent = video.muted ? "🔇" : "🔊";
-    });
-});
 
 /* ZİYARETÇİ SAYACI */
 function updateViews() {
