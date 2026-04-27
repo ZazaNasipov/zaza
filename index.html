@@ -6,33 +6,30 @@
     <title>Zaza | Bozkurt</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Daha modern font kombinasyonu -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- LOADER -->
 <div id="loader" onclick="enter()">
-    <div class="loader-content">
-        <span class="click-hint">DEVAM ET</span>
-    </div>
+    <span class="click-hint">DEVAM ET</span>
 </div>
 
-<video id="bg-video" loop playsinline>
+<!-- VIDEO -->
+<video id="bg-video" autoplay muted loop playsinline>
     <source src="video.mp4" type="video/mp4">
 </video>
 
 <div class="video-overlay"></div>
 
+<!-- SITE -->
 <div id="site" class="site-hidden">
 
     <header>
-        <div class="logo-area">
-            <h1 class="logo">ZA<span>ZA</span></h1>
-            <div class="subtitle">Bozkurt'un İzinde</div>
-        </div>
+        <h1 class="logo">ZA<span>ZA</span></h1>
+        <div class="subtitle">Bozkurt'un İzinde</div>
     </header>
 
     <main class="content-container">
@@ -40,21 +37,27 @@
 
             <span class="panel-badge">TENGRİ BİZ MENEN</span>
 
-            <h2 class="panel-title">
-                Bozkırın Özgür Ruhu
-            </h2>
+            <h2 class="panel-title">Bozkırın Özgür Ruhu</h2>
 
             <p class="panel-text">
                 Bozkırın ortasında yalnız ve özgür, tıpkı bir kurt gibi.
-                Tengri'nin ışığında, yalnızlığın gücüyle kadere meydan okuyan bir ruh.
+                Tengri'nin ışığında kaderine meydan okuyan bir ruh.
             </p>
 
             <div class="divider"></div>
 
             <div class="social-links">
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+                <a href="https://www.instagram.com/nasipov_z" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://youtube.com/@zaza_bzkr" target="_blank" class="social-btn">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <a href="https://discord.gg/MMj2NkZNp" target="_blank" class="social-btn">
+                    <i class="fab fa-discord"></i>
+                </a>
             </div>
 
         </div>
@@ -62,15 +65,7 @@
 
     <footer>
         <div class="footer-stats">
-            <div class="stat-item">
-                <i class="far fa-clock"></i>
-                <span id="clock">00:00:00</span>
-            </div>
-
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <span id="views">2,481</span>
-            </div>
+            <span id="clock">00:00:00</span>
         </div>
     </footer>
 
