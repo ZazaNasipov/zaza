@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaza | Bozkurt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>ZAZA | Bozkurt</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<!-- LOADER -->
 <div id="loader" onclick="enter()">
-    <span class="click-hint">Devam etmek için tıklayın</span>
+    <div class="loader-text">Devam etmek için tıklayın</div>
 </div>
 
-<!-- VIDEO -->
 <video id="bg-video" loop playsinline>
     <source src="video.mp4" type="video/mp4">
 </video>
 
-<div class="video-overlay"></div>
+<div class="overlay"></div>
 
-<!-- SITE -->
-<div id="site" class="site-hidden">
+<div id="site" class="hidden">
 
-    <header>
-        <h1 class="logo">ZA<span>ZA</span></h1>
-        <div class="subtitle">Bozkurt'un İzinde</div>
+    <header class="top">
+        <div class="logo">ZAZA</div>
+        <div class="sub">Bozkurt'un İzinde</div>
     </header>
 
-    <main class="content-container">
-        <div class="glass-panel">
+    <div class="container">
 
-            <span class="panel-badge">YOLUNU KENDİN ÇİZ</span>
+        <div class="panel">
 
-            <h2 class="panel-title">BOZKURT</h2>
+            <div class="tag">YOLUNU KENDİN ÇİZ</div>
 
-            <p class="panel-text">
-                Bozkurt yalnız yürür, çünkü yolunu kimse çizemez.<br>
-                Ne sürünün parçasıdır ne de zincire boyun eğer.<br>
-                Soğuk rüzgârı rehber bilir, karanlıkta bile yönünü kaybetmez.<br>
+            <div class="title">BOZKURT</div>
+
+            <div class="text">
+                Bozkurt yalnız yürür, çünkü yolunu kimse çizemez.<br><br>
+                Ne sürünün parçasıdır ne de zincire boyun eğer.<br><br>
+                Soğuk rüzgârı rehber bilir, karanlıkta bile yönünü kaybetmez.<br><br>
                 Biz, iz süren değil; iz bırakanlarız.
-            </p>
+            </div>
 
-            <div class="divider"></div>
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/nasipov_z" target="_blank" class="social-btn">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="https://youtube.com/@zaza_bzkr" target="_blank" class="social-btn">
-                    <i class="fab fa-youtube"></i>
-                </a>
-
-                <a href="https://discord.gg/wJz5pnHkjY" target="_blank" class="social-btn">
-                    <i class="fab fa-discord"></i>
-                </a>
+            <div class="icons">
+                <a href="https://www.instagram.com/nasipov_z" target="_blank">IG</a>
+                <a href="https://youtube.com/@zaza_bzkr" target="_blank">YT</a>
+                <a href="https://discord.gg/wJz5pnHkjY" target="_blank">DC</a>
             </div>
 
         </div>
-    </main>
 
-    <footer>
-        <div class="footer-stats">
-            👁 <span id="views">0</span>
-        </div>
-    </footer>
+    </div>
+
+    <div class="footer">
+        👁 <span id="views">0</span>
+    </div>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
