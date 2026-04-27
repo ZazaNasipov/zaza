@@ -4,53 +4,38 @@ function enter() {
     const video = document.getElementById('bg-video');
 
     loader.style.opacity = '0';
-    setTimeout(() => loader.style.display = 'none', 1200);
 
-    site.classList.remove('site-hidden');
-    site.classList.add('site-visible');
+    setTimeout(() => {
+        loader.style.display = 'none';
+        site.classList.add('site-visible');
+    }, 700);
 
     if (video) {
+        video.play();
         video.muted = false;
         video.volume = 0.5;
     }
 }
 
-// Mouse Parallax effect
-document.addEventListener('mousemove', (e) => {
-    const panels = document.querySelectorAll('.glass-panel');
-    panels.forEach(panel => {
-        const x = (window.innerWidth / 2 - e.pageX) / 80;
-        const y = (window.innerHeight / 2 - e.pageY) / 80;
-        panel.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
-    });
-});
+// CLOCK
+function updateClock() {
+    const el = document.getElementById("clock");
+    if (!el) return;
 
-// Real-time Clock
-const updateClock = () => {
-    const clockEl = document.getElementById('clock');
-    if (clockEl) {
-        const now = new Date();
-        clockEl.innerText = now.toLocaleTimeString('tr-TR');
-    }
-};
-
-// Simulation of Views
-async function updateViews() {
-    const viewEl = document.getElementById('views');
-    if (!viewEl) return;
-    
-    try {
-        const response = await fetch('https://api.counterapi.dev/v1/zaza-bozkurt/visits/up');
-        const data = await response.json();
-        viewEl.innerText = (data.count || data.value || '2,481').toLocaleString();
-    } catch (e) {
-        viewEl.innerText = '2,481';
-    }
+    const now = new Date();
+    el.textContent = now.toLocaleTimeString("tr-TR");
 }
 
 setInterval(updateClock, 1000);
+updateClock();
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateClock();
-    updateViews();
+// PARALLAX
+document.addEventListener("mousemove", (e) => {
+    const panel = document.querySelector(".glass-panel");
+    if (!panel) return;
+
+    let x = (window.innerWidth / 2 - e.clientX) / 40;
+    let y = (window.innerHeight / 2 - e.clientY) / 40;
+
+    panel.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
 });
