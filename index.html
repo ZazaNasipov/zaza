@@ -1,9 +1,75 @@
-<html>
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaza | BMW</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>ZAZA</h1>
-    <p>Click Here for more information!</p>
+
+    <div id="loader" onclick="enter()">
+        <div class="loader-content">
+            <span class="click-hint">Devam Etmek İçin Tıkla</span>
+        </div>
+    </div>
+
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <div id="site" class="site-hidden">
+        <header>
+            <div class="logo-area">
+                <h1 class="logo">ZA<span>ZA</span></h1>
+                <div class="subtitle">BMW'nin İzinde</div>
+            </div>
+        </header>
+
+        <main class="content-container">
+            <div class="glass-panel main-panel">
+                <div class="panel-badge">KARL RAPP</div>
+                <h2 class="panel-title">BMW</h2>
+                <p class="panel-text">
+                    Mavi-beyaz logo, asfaltta sert bir fırtına,
+Böbrek ızgaralar hırçın, bakıyor her yanına.
+Sadece bir marka değil, asfalta kazınan iz,
+M Power kükrerse, yollarda kalmaz sessiz.
+
+Vites düşer, devir yükselir, ruhu şahlanır,
+The Ultimate Driving Machine, her virajda canlanır.
+Alman mühendisliği, damarlarında akan hız,
+BMW’nin olduğu yerde, gerisi sadece toz.
+                </p>
+                <div class="divider"></div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nasipov_z?igsh=ZGt6NTMzdjN5dTNj&utm_source=qr" target="_blank" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://youtube.com/@zaza_bzkr?si=w7Y0oOnht3XRqP49" target="_blank" class="social-btn youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://discord.gg/wJz5pnHkjY" target="_blank" class="social-btn discord">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-stats">
+                <div class="stat-item"><i class="far fa-clock"></i> <span id="clock">00:00:00</span></div>
+                <div class="stat-item"><i class="fas fa-users"></i> <span id="views">...</span></div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
