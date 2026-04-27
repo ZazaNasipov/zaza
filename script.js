@@ -34,15 +34,20 @@ const updateClock = () => {
     }
 };
 
-// Simulation of Views
+// Real-time Views Update
 async function updateViews() {
     const viewEl = document.getElementById('views');
     if (!viewEl) return;
     
     try {
-        const response = await fetch('https://api.counterapi.dev/v1/zaza-bozkurt/visits/up');
+        // CounterAPI kullanımı (namespace ve key ayrıldı)
+        const response = await fetch('https://api.counterapi.dev/v1/zaza_site/views/up');
         const data = await response.json();
-        viewEl.innerText = (data.count || data.value || '2,481').toLocaleString();
+        if(data.count) {
+            viewEl.innerText = data.count.toLocaleString();
+        } else {
+            viewEl.innerText = '2,481';
+        }
     } catch (e) {
         viewEl.innerText = '2,481';
     }

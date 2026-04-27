@@ -24,7 +24,6 @@ body {
     user-select: none;
 }
 
-/* Loader */
 #loader {
     position: fixed;
     inset: 0;
@@ -64,7 +63,6 @@ body {
     50% { opacity: 1; }
 }
 
-/* Background Video */
 #bg-video {
     position: fixed;
     inset: 0;
@@ -82,7 +80,6 @@ body {
     z-index: -1;
 }
 
-/* Site Content */
 .site-hidden { opacity: 0; pointer-events: none; transform: scale(1.05); }
 .site-visible { 
     opacity: 1 !important; 
@@ -132,7 +129,6 @@ header {
     font-weight: 300;
 }
 
-/* Main Panel */
 .content-container {
     display: flex;
     justify-content: flex-end;
@@ -182,7 +178,6 @@ header {
     margin: 30px 0;
 }
 
-/* Social Buttons */
 .social-links {
     display: flex;
     gap: 15px;
@@ -212,7 +207,6 @@ header {
 .youtube:hover { background: rgba(255, 0, 0, 0.25); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2); }
 .discord:hover { background: rgba(88, 101, 242, 0.25); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(88, 101, 242, 0.2); }
 
-/* Footer */
 footer {
     display: flex;
     justify-content: space-between;
@@ -235,7 +229,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Animations */
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -251,7 +244,6 @@ footer {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     #site { padding: 30px; }
     .logo { font-size: 3rem; }
