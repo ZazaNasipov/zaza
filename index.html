@@ -1,68 +1,16 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaza | Bozkurt</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div id="loader" onclick="enter()">
-        <div class="loader-content">
-            <span class="click-hint">Devam Etmek İçin Tıkla</span>
+<main class="content-container">
+    <div class="glass-panel">
+        <span class="panel-badge">TENGRİ BİZ MENEN</span>
+        <h2 class="panel-title">Bozkırın Özgür Ruhu</h2>
+        <p class="panel-text">
+            Bozkırın ortasında yalnız ve özgür, tıpkı bir kurt gibi. 
+            Tengri'nin ışığında, yalnızlığın gücüyle kadere meydan okuyan bir ruh.
+        </p>
+        <div class="divider"></div>
+        <div class="social-links">
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
         </div>
     </div>
-
-    <video id="bg-video" autoplay muted loop playsinline>
-        <source src="video.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay"></div>
-
-    <div id="site" class="site-hidden">
-        <header>
-            <div class="logo-area">
-                <h1 class="logo">ZA<span>ZA</span></h1>
-                <div class="subtitle">Bozkurt'un İzinde</div>
-            </div>
-        </header>
-
-        <main class="content-container">
-            <div class="glass-panel main-panel">
-                <div class="panel-badge">TENGRİ BİZ MENEN</div>
-                <h2 class="panel-title">Bozkırın Özgür Ruhu</h2>
-                <p class="panel-text">
-                    Bozkırın ortasında tek başımaydım, yalnız ve özgürdüm, tıpkı bir kurt gibi. <br><br>
-                    Tengrizim gökyüzünde parlarken, kılıcım elimde, yalnızlığın gücüyle düşmana meydan okudum. Rüzgâr, ulumamı taşıdı; yalnızlık benim kaderim, gökyüzü ise yoldaşım oldu.
-                </p>
-                <div class="divider"></div>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/nasipov_z?igsh=ZGt6NTMzdjN5dTNj&utm_source=qr" target="_blank" class="social-btn instagram">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://youtube.com/@zaza_bzkr?si=w7Y0oOnht3XRqP49" target="_blank" class="social-btn youtube">
-                        <i class="fab fa-youtube"></i>
-                        <span>YouTube</span>
-                    </a>
-                    <a href="https://discord.gg/MMj2NkZNp" target="_blank" class="social-btn discord">
-                        <i class="fab fa-discord"></i>
-                        <span>Discord</span>
-                    </a>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-stats">
-                <div class="stat-item"><i class="far fa-clock"></i> <span id="clock">00:00:00</span></div>
-                <div class="stat-item"><i class="fas fa-users"></i> <span id="views">...</span></div>
-            </div>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</main>
