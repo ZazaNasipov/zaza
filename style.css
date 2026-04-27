@@ -24,15 +24,15 @@ body {
     inset: 0;
     background: black;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 9999;
     cursor: pointer;
 }
 
 .click-hint {
-    letter-spacing: 6px;
-    font-size: 12px;
+    letter-spacing: 4px;
+    font-size: 13px;
     color: var(--muted);
     animation: blink 1.5s infinite;
 }
@@ -51,7 +51,7 @@ body {
     object-fit: cover;
     z-index: -2;
     filter: brightness(0.4);
-    pointer-events: none; /* LINK FIX */
+    pointer-events: none;
 }
 
 .video-overlay {
@@ -59,7 +59,7 @@ body {
     inset: 0;
     background: rgba(0,0,0,0.5);
     z-index: -1;
-    pointer-events: none; /* LINK FIX */
+    pointer-events: none;
 }
 
 /* SITE */
@@ -101,7 +101,7 @@ body {
 
 /* PANEL */
 .glass-panel {
-    width: 400px;
+    width: 420px;
     padding: 30px;
     border-radius: 20px;
     background: rgba(255,255,255,0.05);
@@ -113,16 +113,24 @@ body {
     transform: translateY(-5px);
 }
 
+.panel-badge {
+    color: var(--primary);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
 .panel-title {
-    font-size: 26px;
+    font-size: 28px;
     margin: 10px 0;
 }
 
 .panel-text {
     color: var(--muted);
     font-size: 14px;
+    line-height: 1.6;
 }
 
+/* DIVIDER */
 .divider {
     height: 1px;
     background: rgba(255,255,255,0.1);
@@ -150,8 +158,13 @@ body {
     background: var(--primary);
 }
 
-/* FOOTER */
+/* FOOTER (SAĞ ALT SAYAÇ) */
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .footer-stats {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--muted);
 }

@@ -7,17 +7,29 @@ function enter() {
     site.classList.add("site-visible");
 
     if (video) {
-        video.muted = true; // AUTOPLAY FIX
+        video.muted = true;
         video.play().catch(() => {});
     }
+
+    updateViews();
 }
 
-// CLOCK
+/* SAAT (istersen kaldırırsın) */
 function updateClock() {
-    const clock = document.getElementById("clock");
     const now = new Date();
-    clock.textContent = now.toLocaleTimeString("tr-TR");
+    return now.toLocaleTimeString("tr-TR");
 }
 
-setInterval(updateClock, 1000);
-updateClock();
+/* ZİYARETÇİ SAYACI */
+function updateViews() {
+    let views = localStorage.getItem("views");
+
+    if (!views) {
+        views = 1;
+    } else {
+        views = parseInt(views) + 1;
+    }
+
+    localStorage.setItem("views", views);
+    document.getElementById("views").textContent = views;
+}
