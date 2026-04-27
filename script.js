@@ -4,28 +4,20 @@ function enter() {
     const video = document.getElementById("bg-video");
 
     loader.style.display = "none";
-    site.classList.add("site-visible");
+    site.classList.remove("hidden");
 
     if (video) {
-        video.currentTime = 0;
-        video.muted = false;   // 🔊 SES AÇ
+        video.muted = false;
         video.volume = 1;
-
-        video.play().catch(err => {
-            console.log("Video başlatılamadı:", err);
-        });
+        video.play().catch(() => {});
     }
 
-    updateViews();
+    views();
 }
 
-/* ZİYARETÇİ SAYACI */
-function updateViews() {
-    let views = localStorage.getItem("views");
-
-    if (!views) views = 1;
-    else views = parseInt(views) + 1;
-
-    localStorage.setItem("views", views);
-    document.getElementById("views").textContent = views;
+function views() {
+    let v = localStorage.getItem("views") || 0;
+    v++;
+    localStorage.setItem("views", v);
+    document.getElementById("views").innerText = v;
 }
